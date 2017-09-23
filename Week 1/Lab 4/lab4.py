@@ -1,17 +1,25 @@
-with open('input.txt') as inputFile:
-  length = int(inputFile.readline())
-  list1 = print(x) for x in enumerate(inputFile.readline().split())
+from openedu_io import openedu_io
 
-  print(list)
+with openedu_io() as io:
+  length = io.next_int()
+  print(length)
+  print(io.next_float())
+  print(io.next_float())
 
-  # for passnum in range(length-1,0,-1):
-  #   for i in range(passnum):
-  #     if array[i][0]>array[i+1][0]:
-  #       temp = array[i]
-  #       array[i] = array[i+1]
-  #       array[i+1] = temp
+# inputFile = open('input.txt','r')
+# length = int(inputFile.readline())
+# array = list(enumerate(inputFile.readline().split()))
+# inputFile.close()
 
-  line = '' + str(array[0][1]) + ' ' + str(array[-(-(length - 1)//2)][1]) + ' ' + str(array[length - 1][1])
+# for passnum in range(length-1,0,-1):
+#   for i in range(passnum):
+#     if float(array[i][1]) > float(array[i+1][1]):
+#       temp = array[i]
+#       array[i] = array[i+1]
+#       array[i+1] = temp
 
-outputFile = open('output.txt', 'w')
-outputFile.write(line)
+# line = '' + str(array[0][0] + 1) + ' ' + str(array[-(-(length - 1)//2)][0] + 1) + ' ' + str(array[length - 1][0] + 1)
+
+# outputFile = open('output.txt', 'w')
+# outputFile.write(line)
+# outputFile.close()

@@ -1,0 +1,21 @@
+from openedu_io import openedu_io
+
+with openedu_io() as io:
+  length = io.next_int()
+  array = []
+  x = 0
+  while x < length:
+    newx = x + 1
+    array.append([newx, io.next_float()])
+    x = newx
+
+  for j, v in enumerate(array):
+    i = j - 1
+    while i > -1 and v[1] < array[i][1]:
+      array[i+1] = array[i]
+      i = i - 1
+    array[i+1] = v
+
+  result = (array[0][0], array[(length - 1) // 2][0], array[length - 1][0])
+
+  io.write(result)
