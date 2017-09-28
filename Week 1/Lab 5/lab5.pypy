@@ -1,0 +1,20 @@
+from openedu_io import openedu_io
+
+with openedu_io() as io:
+  length = io.next_int()
+  array = []
+  x = 0
+  while x < length:
+    array.append(io.next_int())
+    x = x + 1
+
+  for passnum in range(length - 1, 0, -1):
+    for i in range(passnum):
+      if int(array[i]) > int(array[i + 1]):
+        temp = array[i]
+        array[i] = array[i + 1]
+        array[i + 1] = temp
+        io.writeln('Swap elements at indices %d and %d.' % (i + 1, i + 2))
+
+  io.writeln('No more swaps needed.')
+  io.writeln(array)
